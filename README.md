@@ -6,6 +6,8 @@
 
 An original open-world crime game, built for [make.fun's Make GTA 6 bounty](https://make.fun/bounty/gta6-01). Mara Quinn came home to Sunset Bay with a busted bike, a dead-end garage job, and a debt she never agreed to. Steal cars, lose the cops, and run three story missions across five districts — all in a desktop browser, offline, from static files.
 
+**Play it live:** https://hibikazen.github.io/makefun-gta6-01/game/ — no install, just open in desktop Chrome.
+
 ## What it is
 
 - **A complete open world** — a sun-soaked coastal city at golden hour with five distinct districts: Downtown Meridian's towers, the Palm Marina boardwalk and ferris wheel, Coral Heights, the Port Delmar docks and crane, and brick Old Town. A 9×9 street grid with traffic, sidewalks, palms, streetlights and neon signs.
