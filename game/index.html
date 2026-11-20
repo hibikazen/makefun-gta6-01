@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Bay — Open-World Crime Game</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ff7a3c'/%3E%3Ccircle cx='16' cy='13' r='7' fill='%23ffe9a8'/%3E%3Crect y='22' width='32' height='10' fill='%231a5f7f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="game-canvas"></canvas>
+
+  <!-- In-game HUD -->
+  <div id="hud" class="hidden">
+    <div id="hud-top-left">
+      <div id="wanted-stars" aria-label="Wanted level"></div>
+      <div id="clock">18:30</div>
+    </div>
+    <div id="hud-top-right">
+      <div id="money">$250</div>
+      <div id="health-bar"><div id="health-fill"></div></div>
+      <div id="health-label">HEALTH</div>
+    </div>
+    <div id="objective-box" class="hidden">
+      <div id="objective-title">MISSION</div>
+      <div id="objective-text"></div>
+    </div>
+    <div id="banner" class="hidden"><div id="banner-title"></div><div id="banner-sub"></div></div>
+    <div id="minimap-wrap">
+      <canvas id="minimap" width="190" height="190"></canvas>
+      <div id="minimap-north">N</div>
+      <div id="district-label">Downtown Meridian</div>
+    </div>
+    <div id="speed-box" class="hidden"><span id="speed-value">0</span><span id="speed-unit">MPH</span></div>
+    <div id="prompt" class="hidden"></div>
+    <div id="crosshair" class="hidden">+</div>
+    <div id="damage-flash"></div>
+    <div id="controls-hint">WASD move &middot; Mouse drag camera &middot; E enter/exit car &middot; F punch &middot; Click shoot &middot; Shift run &middot; Space jump &middot; Esc pause &middot; M mute</div>
+  </div>
+
+  <!-- Start screen -->
+  <div id="start-screen">
+    <div id="start-panel">
+      <div id="start-kicker">AN ORIGINAL OPEN-WORLD CRIME STORY</div>
+      <h1 id="start-title">SUNSET BAY</h1>
+      <p id="start-story">Mara Quinn came home to the Bay with a busted bike, a
+      dead-end garage job, and a debt she never agreed to. The city runs on
+      favors, fast cars, and bad decisions — and tonight, it runs on hers.</p>
+      <div id="start-controls">
+        <div><b>WASD</b> walk / drive</div><div><b>Mouse drag</b> camera</div>
+        <div><b>E</b> enter / exit car</div><div><b>F</b> punch</div>
+        <div><b>Click</b> shoot pistol</div><div><b>Shift</b> run</div>
+        <div><b>Space</b> jump</div><div><b>Esc</b> pause &amp; save</div>
+      </div>
+      <div id="start-buttons">
+        <button id="btn-start" class="big-btn">START NEW GAME</button>
+        <button id="btn-continue" class="big-btn hidden">CONTINUE</button>
+      </div>
+      <p id="start-note">Steal cars, lose the cops, run three story missions across five
+      districts. Everything here — city, names, story, art, sound — is original.
+      Best played with keyboard and mouse in desktop Chrome.</p>
+    </div>
+  </div>
+
+  <!-- Pause menu -->
+  <div id="pause-screen" class="hidden">
+    <div class="menu-panel">
+      <h2>PAUSED</h2>
+      <p id="pause-stats"></p>
+      <button id="btn-resume" class="big-btn">RESUME</button>
+      <button id="btn-save" class="big-btn">SAVE GAME</button>
+      <button id="btn-mute" class="big-btn">SOUND: ON</button>
+      <button id="btn-menu" class="big-btn">QUIT TO MENU</button>
+    </div>
+  </div>
+
+  <!-- Busted / wasted -->
+  <div id="end-screen" class="hidden">
+    <div class="menu-panel">
+      <h2 id="end-title">BUSTED</h2>
+      <p id="end-text"></p>
+      <button id="btn-respawn" class="big-btn">GET BACK OUT THERE</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
